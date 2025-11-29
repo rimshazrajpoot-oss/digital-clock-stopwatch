@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Digital Clock + Stopwatch</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <header class="app-header">
+      <h1 class="title">TimeHub</h1>
+      <div class="controls">
+        <button id="themeToggle" aria-pressed="false" title="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="panels">
+      <article class="panel clock-panel" aria-labelledby="clockHeading">
+        <h2 id="clockHeading">Digital Clock</h2>
+        <div class="clock-display" aria-live="polite">
+          <div class="time" id="time">00:00:00 AM</div>
+          <div class="date" id="date">Monday, Jan 1, 1970</div>
+        </div>
+        <div class="clock-footer">
+          <small>Local time</small>
+        </div>
+      </article>
+
+      <article class="panel stopwatch-panel" aria-labelledby="stopwatchHeading">
+        <h2 id="stopwatchHeading">Stopwatch</h2>
+        <div class="stopwatch-display" role="timer" aria-live="polite">
+          <div class="sw-time" id="swTime">00:00:00.000</div>
+        </div>
+
+        <div class="sw-buttons">
+          <button id="swStart" class="btn primary">Start</button>
+          <button id="swStop" class="btn" disabled>Stop</button>
+          <button id="swLap" class="btn" disabled>Lap</button>
+          <button id="swReset" class="btn" disabled>Reset</button>
+        </div>
+
+        <div class="laps" aria-live="polite">
+          <h3>Lap Times</h3>
+          <ol id="lapsList" class="laps-list"></ol>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
